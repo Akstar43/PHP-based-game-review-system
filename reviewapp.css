@@ -1,0 +1,474 @@
+/* -------------------------------------------------------------------------
+   Game Review App - Stylesheet (COMP1841)
+   Gaming Monospace Font (Share Tech Mono) • Orange & Grey Palette • Zero Radius
+   ------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 !important;
+    font-weight: normal !important;
+}
+
+body {
+    background-color: white;
+    ; /* Grey 500 */
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header & Title */
+header {
+    background-color: black;
+    padding: 24px 20px 10px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+header h1 {
+    color: white;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: black; /* Game Orange Accent */
+    padding: 10px 20px 14px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 12px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    background-color: black;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 14px;
+    border-radius: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: white; /* Light Orange Tint */
+    color: black; /* Deep Orange */
+}
+
+/* Main Content Wrapper */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* Links */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Home Page */
+main > h2:first-child {
+    color: #374151;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+main > h2:first-child + p {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0;
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    color: #6b7280; /* Grey 500 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Total Games Count Banner */
+main > p:first-child {
+    display: inline-block;
+    color: white; /* Grey 500 */
+    padding: 6px 14px;
+    border-radius: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Fixes unclosed .game tags from template */
+.game {
+    display: contents;
+}
+.game_image {
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    object-fit: cover;  
+}
+
+/* Game Card */
+.games-grid blockquote,
+blockquote {
+    background-color: rgb(242, 242, 242);
+    border: 1px solid #e5e7eb;
+    border-radius: 0;
+    padding: 18px;
+    margin: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    max-height: 640px;
+    overflow-y: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Scrollbar for game card */
+.games-grid blockquote::-webkit-scrollbar,
+blockquote::-webkit-scrollbar {
+    width: 6px;
+}
+
+.games-grid blockquote::-webkit-scrollbar-track,
+blockquote::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.games-grid blockquote::-webkit-scrollbar-thumb,
+blockquote::-webkit-scrollbar-thumb {
+    background: #656060;
+}
+
+.games-grid blockquote::-webkit-scrollbar-thumb:hover,
+blockquote::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+}
+
+/* Simple scale animation on card hover */
+.games-grid blockquote:hover,
+blockquote:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Heading */
+blockquote h3:first-of-type {
+    color: black; /* Orange Heading */
+    font-size: 16px;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+/* Game Details List */
+blockquote ul {
+    list-style: none;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+blockquote ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280; /* Grey 500 */
+    font-size: 14px;
+    border-radius: 0;
+}
+
+/* Game Name */
+blockquote ul li:nth-child(1) {
+    color: #1f2937;
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+/* Price */
+blockquote ul li:nth-child(2) {
+    color: black; /* Orange Price Accent */
+}
+
+blockquote ul li:last-child {
+    border-bottom: none;
+}
+
+/* Action Buttons (Edit / Delete) */
+.game-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.game-actions form,
+#review-actions form,
+blockquote > form,
+.review-box form {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+input[type="submit"] {
+    font-family: inherit;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 0 !important;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+/* Simple scale on button hover */
+input[type="submit"]:hover {
+    transform: scale(1.04);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Edit Button: Clean Slate Grey */
+input[type="submit"][value="Edit"] {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+}
+
+input[type="submit"][value="Edit"]:hover {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+/* Delete Button: Simple Red */
+input[type="submit"][value="Delete"] {
+    background-color: red;
+    color: white;
+    border: 1px solid #fecaca;
+}
+
+/* Add Review Buttons: Orange Accent */
+input[type="submit"][value="Add Another Review"],
+input[type="submit"][value="Add"] {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    font-size: 8px;
+}
+
+input[type="submit"][value="Add Another Review"]:hover,
+input[type="submit"][value="Add"]:hover {
+    background-color: black;
+}
+
+/* Reviews Header */
+blockquote h3:nth-of-type(2) {
+    color: #6b7280;
+    font-size: 10px;
+    margin-bottom: 8px;
+    font-size: 8px;
+}
+
+blockquote > form:has(input[value="Add Another Review"]) {
+    margin-bottom: 8px !important;
+    font-size: 8px;
+}
+
+/* Individual Review Box */
+.review-box {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 10px;
+    margin-top: 8px;
+    color: black;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+#review-actions {
+    display: iflex;
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #e5e7eb;
+}
+
+#review-actions input[type="submit"] {
+    padding: 3px 8px;
+    font-size: 8px;
+}
+
+/* -------------------------------------------------------------------------
+   Main Forms (Add Game, Edit Game, Add Review, Edit Review)
+   Overrides the inline styles from the PHP files:
+   (width: 30vw; height: 50vh; font-size: 24px)
+   ------------------------------------------------------------------------- */
+main > form,
+form[style*="width: 30vw"],
+form[style*="height: 50vh"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 20px auto !important;
+    padding: 22px !important;
+    font-size: 14px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Form Labels */
+main > form label,
+form[style*="width: 30vw"] label {
+    display: block;
+    font-size: 13px;
+    color: #6b7280; /* Grey 500 */
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+main > form label:first-child,
+form[style*="width: 30vw"] label:first-child {
+    margin-top: 0;
+}
+
+/* Inputs, Textareas, Selects */
+main > form input[type="text"],
+main > form input[type="number"],
+main > form textarea,
+main > form select,
+form[style*="width: 30vw"] input[type="text"],
+form[style*="width: 30vw"] input[type="number"],
+form[style*="width: 30vw"] textarea,
+form[style*="width: 30vw"] select {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 0 !important;
+    color: #374151;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 8px 10px;
+    margin-bottom: 4px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Focus on inputs */
+main > form input[type="text"]:focus,
+main > form input[type="number"]:focus,
+main > form textarea:focus,
+main > form select:focus,
+form[style*="width: 30vw"] input[type="text"]:focus,
+form[style*="width: 30vw"] input[type="number"]:focus,
+form[style*="width: 30vw"] textarea:focus,
+form[style*="width: 30vw"] select:focus {
+    border-color: black; /* Orange Focus */
+}
+
+main > form textarea,
+form[style*="width: 30vw"] textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+main > form select option,
+form[style*="width: 30vw"] select option {
+    background-color: #ffffff;
+    color: #374151;
+}
+
+/* Submit Button in Main Forms */
+main > form input[type="submit"],
+form[style*="width: 30vw"] input[type="submit"] {
+    display: block !important;
+    width: 100% !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    background-color: black !important;
+    color: white !important;
+    font-size: 14px !important;
+    border: 1px solid black !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    margin-top: 18px !important;
+    margin-bottom: 4px !important;
+    transition: transform 0.15s ease, background-color 0.15s ease !important;
+}
+
+main > form input[type="submit"]:hover,
+form[style*="width: 30vw"] input[type="submit"]:hover {
+    background-color: black !important;
+    transform: scale(1.02) !important;
+}
+
+/* Hide stray line breaks */
+main > form > br:first-child,
+main > form br {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main > form,
+    form[style*="width: 30vw"] {
+        padding: 16px !important;
+        margin: 10px auto !important;
+    }
+}
