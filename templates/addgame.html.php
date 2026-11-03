@@ -30,8 +30,8 @@ action="" enctype="multipart/form-data">
         <option value="<?=htmlspecialchars($game_company['id'], ENT_QUOTES, 'UTF-8') ?>">
         <?= htmlspecialchars($game_company['game_company_name'], ENT_QUOTES, 'UTF-8')?>
         </option>
-    </select>
         <?php endforeach;?>
+        </select>
     <label>Add Game</label>
     <input type="submit" name="submit" value="Add Game" style="height: 40px;">
 </form>
