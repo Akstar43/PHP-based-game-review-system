@@ -1,4 +1,6 @@
+<a href="gamereview.php" style="color: white;">< Back</a>
 <form action="" method="post" style="display: flex; flex-direction: column; font-size: 24px; width: 30vw; padding: 12px; height: 50vh; margin: 12px;">
+<h1><?= $game['game_name'] ?></h1>
     <label>Add Review Content</label>
     <textarea name="review_content" rows="3" cols="40"></textarea>
     <input type="hidden" value="<?= $_POST['game_id']?>" name="game_id">

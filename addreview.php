@@ -14,10 +14,17 @@ if (isset($_POST['review_content'])){
 }
     else {
         include 'includes/DatabaseConnection.php';
-        $title = 'Add new Game';
+        $title = 'Add new Review';
         $sql_r = 'SELECT * FROM reviewers';
         $reviewers = $pdo->query($sql_r);
         ob_start();
+        $stmt = $pdo->prepare("SELECT * FROM games WHERE games.id = :id");
+        $values = [':id' => $_POST['game_id']];
+        $stmt->execute($values);
+        $game = $stmt->fetch();
+
+
+
         include 'templates/addreview.html.php';
         $output = ob_get_clean();
     }

@@ -17,7 +17,7 @@ function deletreview($pdo, $id) {
 }
 function addreview($pdo, $review_content, $replayability_rating, $enjoyment_rating, $plot_rating, $percentage, $game_id, $reviewer_id ) {
         $stmt = $pdo->prepare('INSERT INTO reviews SET review_content = :review_content, last_updated = CURRENT_TIMESTAMP, reviewer_id = :reviewer_id, replayability_rating = :replayability_rating, enjoyment_rating = :enjoyment_rating, plot_rating = :plot_rating, Overall_rating = :overall_rating, percentage_played = :percentage_played, game_id = :game_id');
-        $overall_rating = $enjoyment_rating + $plot_rating + $replayability_rating / 3;
+        $overall_rating = (($enjoyment_rating + $plot_rating + $replayability_rating) / 3);
         $values = [ 
             ":review_content" => $review_content,
             ":replayability_rating" => $replayability_rating,
@@ -33,7 +33,7 @@ function addreview($pdo, $review_content, $replayability_rating, $enjoyment_rati
 
 function editreview($pdo, $review_content, $replayability_rating, $enjoyment_rating, $plot_rating, $percentage, $game_id, $id, $reviewer_id ) {
         $stmt = $pdo->prepare(' UPDATE reviews SET review_content = :review_content, last_updated = CURRENT_TIMESTAMP, reviewer_id = :reviewer_id, replayability_rating = :replayability_rating, enjoyment_rating = :enjoyment_rating, plot_rating = :plot_rating, Overall_rating = :overall_rating, percentage_played = :percentage_played, game_id = :game_id WHERE reviews.id = :id');
-        $overall_rating = $enjoyment_rating + $plot_rating + $replayability_rating / 3;
+        $overall_rating = (($enjoyment_rating + $plot_rating + $replayability_rating) / 3);
         $values = [ 
             ":review_content" => $review_content,
             ":replayability_rating" => $replayability_rating,
@@ -74,4 +74,7 @@ function addgame($pdo, $game_name, $game_company_id, $game_price, $category_id, 
     $stmt->execute($values);
     
 
+}
+function backbutton () {
+    header('location: game_review.php');
 }

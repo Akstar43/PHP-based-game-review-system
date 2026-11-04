@@ -1,3 +1,4 @@
+<a href="gamereview.php" style="color: white;">< Back</a>
 <form action="" method="post" style="display: flex; flex-direction: column; font-size: 24px; width: 30vw; padding: 12px; height: 50vh; margin: 12px;">
     <?= $data['game_name'] ?>
     <label>Add Review Content</label>

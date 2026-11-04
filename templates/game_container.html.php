@@ -1,4 +1,4 @@
-<p><?= $totalgames ?> games uploaded to internet games database</p>
+<p><?= $totalgames ?> games uploaded to Crit Hit Game Review</p>
 <?php $lastgame = null ?>
 <div class="games-grid">
     <?php foreach ($games as $game): ?>
@@ -40,17 +40,22 @@
                     <?php else: ?>
                     <div class="review-box">
                     </br>
-                        <?= htmlspecialchars($game['review_content']) ?>
+                        <p style="font-size: 16px;"><?= htmlspecialchars($game['review_content']) ?></p>
                         </br>
-                        Replayability rating: <?= htmlspecialchars($game['replayability_rating']) ?>%
+                        <p>Replayability rating</p>
+                        <?= htmlspecialchars($game['replayability_rating']) ?>%
                         </br>
-                        Enjoyment rating: <?= htmlspecialchars($game['enjoyment_rating']) ?>%
+                        <p>Enjoyment rating</p>
+                        <?= htmlspecialchars($game['enjoyment_rating']) ?>%
                         </br>
-                        Plot rating: <?= htmlspecialchars($game['plot_rating']) ?>%
+                        <p>Plot rating</p>
+                        <?= htmlspecialchars($game['plot_rating']) ?>%
                         </br>
-                        Percentage played: <?= htmlspecialchars($game['percentage_played']) ?>%
+                        <p>Percentage Played</p>
+                        <?= htmlspecialchars($game['percentage_played']) ?>%
                         </br>
-                        Overall rating: <?= htmlspecialchars($game['Overall_rating']) ?>%
+                        <p style="font-size: 16px;">Overall rating</p>
+                        <p style="font-size: 14px;"><?= htmlspecialchars($game['Overall_rating']) ?>%</p>
                         </br>
                         Reviewer Name: <?= htmlspecialchars($game['reviewer_name']) ?>
                         </br>

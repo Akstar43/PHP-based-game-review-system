@@ -1,7 +1,7 @@
 <?php 
 if (isset($_POST['game_name'])){
     try {
-        $name = $_FILES['image']['name'];
+        $name = $_FILES['new_game_image']['name'];
         include 'includes/DatabaseConnection.php';
         include 'includes/DataBaseFunctions.php';
         include 'upload.php';

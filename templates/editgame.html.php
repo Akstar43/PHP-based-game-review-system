@@ -1,9 +1,10 @@
+<a href="gamereview.php" style="color: white;">< Back</a>
 <form action="" method="post" style="display: flex; flex-direction: column; font-size: 24px; width: 30vw; padding: 12px; height: 50vh; margin: 12px;" enctype="multipart/form-data">
     <label for="game_name">Game Name</label>
     <textarea name="game_name" rows="3" cols="40">
         <?= $sql_data['game_name'] ?>
     </textarea>
-    <img src="images/<?= $sql_data['game_image_url']?>">
+    <img src="images/<?= $sql_data['game_image_url']?>" height="500px" width="fit-content">
     <label>Edit Image</label>
     <input type="file" name="new_game_image">
     <input type="hidden" value="<?= $sql_data['game_image_url'] ?>" name="existing_game_image">
@@ -31,14 +32,13 @@
         <input type="hidden" name="id" value="<?= $_POST['id']?>">
     <label>Select Console Played On</label>
     <select name="console_played_on">
-        <option value="">Console Played On</option>
+        <option value="<?= $sql_data['console_played_on'] ?>"><?= $sql_data['console_played_on'] ?>(selected)</option>
         <option value="PS5">PS5</option>
         <option value="PS4">PS4</option>
         <option value="PC">PC</option>
         <option value="Nintendo">Nintendo</option>
         <option value="Xbox One/X/S">Xbox One/X/S</option>
     </select>
-
     </select>
     <label>Edit Game</label>
     <input type="submit" name="submit" value="Edit Game" style="height: 40px;">

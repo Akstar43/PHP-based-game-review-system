@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="reviewapp.css?v=<?= filemtime('reviewapp.css') ?>">
 </head>
 <body>
-    <header><h1>Internet Game Database</h1></header>
+    <header><h1>Crit Hit Game Review</h1></header>
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>

@@ -1,6 +1,8 @@
+<a href="gamereview.php" style="color: white;">< Back</a>
 <form method="post" style="display: flex; flex-direction: column; font-size: 24px; width: 30vw; padding: 12px; height: 50vh; margin: 12px;"
 action="" enctype="multipart/form-data">
-    <input type="file" name="image" required>
+<h1>Add New Game</h1>
+    <input type="file" name="new_game_image" required >
     <label for="game_name">Game Name</label>
     <textarea name="game_name" rows="3" cols="40"></textarea>
     <label for="game_price">Game price</label>

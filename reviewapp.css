@@ -15,6 +15,12 @@
     padding: 6px 12px;
     border-radius: 15px;
 }
+.review-box p {
+    font-size: 10px;
+}
+.overall_rating {
+    font-size: 16px;
+}
 body {
 background: #80818a;
 background: linear-gradient(90deg, rgba(128, 129, 138, 1) 0%, rgba(64, 71, 65, 1) 50%, rgba(222, 219, 204, 1) 100%);
