@@ -9,12 +9,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border-radius: 0 !important;
     font-weight: normal !important;
 }
-
+.search {
+    padding: 6px 12px;
+    border-radius: 15px;
+}
 body {
-    background-color: white;
+background: #80818a;
+background: linear-gradient(90deg, rgba(128, 129, 138, 1) 0%, rgba(64, 71, 65, 1) 50%, rgba(222, 219, 204, 1) 100%);
     ; /* Grey 500 */
     font-family: 'Share Tech Mono', 'Courier New', monospace;
     font-size: 15px;
@@ -133,15 +136,18 @@ main > p:first-child {
     justify-content: center;
     align-items: center;
     width: 100%;
-    object-fit: cover;  
+    border-radius: 25px;
+    object-fit: cover; 
+    border: 1.5px solid grey
 }
 
 /* Game Card */
 .games-grid blockquote,
 blockquote {
+
     background-color: rgb(242, 242, 242);
-    border: 1px solid #e5e7eb;
-    border-radius: 0;
+    border: 0.5px double #000000;
+    border-radius: 15px;
     padding: 18px;
     margin: 0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
@@ -150,27 +156,28 @@ blockquote {
     max-height: 640px;
     overflow-y: auto;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 /* Scrollbar for game card */
 .games-grid blockquote::-webkit-scrollbar,
 blockquote::-webkit-scrollbar {
-    width: 6px;
+    width: 0px;
 }
 
 .games-grid blockquote::-webkit-scrollbar-track,
 blockquote::-webkit-scrollbar-track {
-    background: #f1f1f1;
+background: white;
 }
 
 .games-grid blockquote::-webkit-scrollbar-thumb,
 blockquote::-webkit-scrollbar-thumb {
-    background: #656060;
+    background: white;
 }
 
 .games-grid blockquote::-webkit-scrollbar-thumb:hover,
 blockquote::-webkit-scrollbar-thumb:hover {
-    background: #333333;
+    background: white;
 }
 
 /* Simple scale animation on card hover */
@@ -207,7 +214,8 @@ blockquote ul li {
 /* Game Name */
 blockquote ul li:nth-child(1) {
     color: #1f2937;
-    font-size: 16px;
+    font-size: 18px;
+    text-align: center;
     padding-bottom: 8px;
 }
 
@@ -247,7 +255,7 @@ input[type="submit"] {
     font-family: inherit;
     font-size: 13px;
     padding: 6px 12px;
-    border-radius: 0 !important;
+    border-radius: 10px;
     cursor: pointer;
     border: 1px solid transparent;
     transition: transform 0.15s ease, background-color 0.15s ease;
@@ -311,8 +319,8 @@ blockquote > form:has(input[value="Add Another Review"]) {
 /* Individual Review Box */
 .review-box {
     background-color: white;
-    border: 1px solid black;
-    border-radius: 0;
+    border: 0.5px dotted black;
+    border-radius: 15px;
     padding: 10px;
     margin-top: 8px;
     color: black;

@@ -13,6 +13,11 @@
             <li><a href="index.php">Home</a></li>
             <li><a href="gamereview.php">Games List</a></li>
             <li><a href="addgame.php">Add new game</a></li>
+            <li></li>
+            <form>
+            <li><input type="text" name="search" placeholder="Search for a Game" class="search"></li>
+            <li><input type="submit" value="⌕" name="search_games" style="font-size: 16px; border-radius: 50%;"></li>
+            </form>
         </ul>
     </nav>
     <main>

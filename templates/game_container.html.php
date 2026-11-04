@@ -9,8 +9,9 @@
             <div class="game">
                 <blockquote>
                     <ul>
-                        <li><img class="game_image" src="images/<?= $game['game_image_url'] ?>"></li>
-                        <li>Game Name: <?= htmlspecialchars($game['game_name'], ENT_QUOTES, 'UTF-8') ?></li>
+                        
+                        <li class="game_name"><?= htmlspecialchars($game['game_name'], ENT_QUOTES, 'UTF-8') ?></li>
+                        <li><img class="game_image" src="images/<?= $game['game_image_url'] ?>"></li>                        
                         <li>Game Price: <?= htmlspecialchars($game['game_price'], ENT_QUOTES, 'UTF-8') ?></li>
                         <li>Game Company: <?= htmlspecialchars($game['game_company_name'], ENT_QUOTES, 'UTF-8') ?></li>
                         <li>Game Category: <?= htmlspecialchars($game['category_name'], ENT_QUOTES, 'UTF-8') ?></li>
@@ -29,19 +30,16 @@
                         </form>
                     </div>
                     <h3>Reviews</h3>
-                    <form action="addreview.php" method="post" id="add_other_review">
-                        <input type="hidden" name="game_id" value="<?= $game['id'] ?>">
-                        <input type="submit" value="Add Another Review">
-                    </form>
                     <?php $lastgame = $game['id']; ?>
                 <?php endif; ?>
-                <div class="review-box">
                     <?php if (!isset($game['review_content'])): ?>
                         <form action="addreview.php" method="post">
                             <input type="hidden" name="game_id" value="<?= $game['id'] ?>">
                             <input type="submit" value="Add">
                         </form>
                     <?php else: ?>
+                    <div class="review-box">
+                    </br>
                         <?= htmlspecialchars($game['review_content']) ?>
                         </br>
                         Replayability rating: <?= htmlspecialchars($game['replayability_rating']) ?>%
@@ -70,6 +68,11 @@
                                 <input type="submit" value="Edit">
                             </form>
                         </div>
+                    </br>
+                        <form action="addreview.php" method="post" id="add_other_review">
+                        <input type="hidden" name="game_id" value="<?= $game['id'] ?>">
+                        <input type="submit" value="Add Another Review">
+                    </form>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>

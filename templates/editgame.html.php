@@ -1,8 +1,12 @@
-<form action="" method="post" style="display: flex; flex-direction: column; font-size: 24px; width: 30vw; padding: 12px; height: 50vh; margin: 12px;">
+<form action="" method="post" style="display: flex; flex-direction: column; font-size: 24px; width: 30vw; padding: 12px; height: 50vh; margin: 12px;" enctype="multipart/form-data">
     <label for="game_name">Game Name</label>
     <textarea name="game_name" rows="3" cols="40">
         <?= $sql_data['game_name'] ?>
     </textarea>
+    <img src="images/<?= $sql_data['game_image_url']?>">
+    <label>Edit Image</label>
+    <input type="file" name="new_game_image">
+    <input type="hidden" value="<?= $sql_data['game_image_url'] ?>" name="existing_game_image">
     <label for="game_price">Game price</label>
     <input type="text" name="game_price" placeholder="Game price" value="<?= $sql_data['game_price'] ?>">
     <label>Select Category</label>
